@@ -19,4 +19,6 @@ Unecessary re-renders, fine grained control
 
 ### [Rerenders](https://github.com/IncentivioInc/react-coding-challenges/tree/main/rerenders)
 
-Unecessary re-renders
+*Unecessary re-renders*
+
+If you're familiar with the react concepts in play here, this may only take you 5 minutes. If not, you will probably be hitting the react docs + google.
