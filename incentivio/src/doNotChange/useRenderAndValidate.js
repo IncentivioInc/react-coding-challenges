@@ -11,7 +11,7 @@ export const useRenderAndValidate = (char, stateChar) => {
   });
 
   return function renderAndValidate() {
-    if (renderCount.current > 0) {
+    if (renderCount.current++ > 0) {
       if (!allCharactersLoaded) {
         dispatch(setLoadingError());
       }
