@@ -12,10 +12,9 @@ const api = {
   getT: () => new Promise((resolve) => resolve(characterData("t"))),
   getV: () => new Promise((resolve) => resolve(characterData("v"))),
   getO: () =>
-    new Promise(
-      (resolve) => setTimeout(() => resolve(characterData("o"))),
-      2000
-    ),
+    new Promise((resolve) => {
+      setTimeout(() => resolve(characterData("o")), 2000);
+    }),
 };
 
 export default api;
