@@ -11,18 +11,20 @@ export default function Results() {
   return (
     <S.Container>
       <div>
-        Loading: {loadingError ? "X You should only display " : "&#10003;"}
+        Loading: {loadingError ? "X You should only display " : <S.Checkmark />}
       </div>
       <div>
         Match:{" "}
-        {matchErrorEntries.length
-          ? matchErrorEntries.map(([expected, actual], i) => (
-              <span key={expected}>
-                Expected {actual} to be {expected}
-                {i < matchErrorEntries.length - 1 && ", "}
-              </span>
-            ))
-          : "&#10003;"}
+        {matchErrorEntries.length ? (
+          matchErrorEntries.map(([expected, actual], i) => (
+            <span key={expected}>
+              Expected {actual} to be {expected}
+              {i < matchErrorEntries.length - 1 && ", "}
+            </span>
+          ))
+        ) : (
+          <S.Checkmark />
+        )}
       </div>
     </S.Container>
   );
