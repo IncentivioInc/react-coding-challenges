@@ -28,7 +28,7 @@ export default function Results() {
         )}
       </div>
       <div>
-        Get the correct data:
+        Correct spelling:
         {matchErrorEntries.length ? (
           <>
             <S.X />
