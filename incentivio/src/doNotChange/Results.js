@@ -20,8 +20,8 @@ export default function Results() {
         {loadingError ? (
           <>
             <S.X />
-            "You should only render the letters from the api one all of them
-            have been loaded"
+            You should only render the letters from the api once all of them
+            have been loaded
           </>
         ) : (
           <S.Checkmark />
