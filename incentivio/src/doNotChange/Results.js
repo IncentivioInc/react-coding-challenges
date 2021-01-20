@@ -28,7 +28,7 @@ export default function Results() {
         )}
       </div>
       <div>
-        Match:
+        Get the correct data:
         {matchErrorEntries.length ? (
           <>
             <S.X />
