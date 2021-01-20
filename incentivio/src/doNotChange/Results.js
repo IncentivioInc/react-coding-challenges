@@ -28,14 +28,17 @@ export default function Results() {
         )}
       </div>
       <div>
-        Match: <S.X />
+        Match:
         {matchErrorEntries.length ? (
-          matchErrorEntries.map(([expected, actual], i) => (
-            <span key={expected}>
-              Expected {actual} to be {expected}
-              {i < matchErrorEntries.length - 1 && ", "}
-            </span>
-          ))
+          <>
+            <S.X />
+            {matchErrorEntries.map(([expected, actual], i) => (
+              <span key={expected}>
+                Expected {actual} to be {expected}
+                {i < matchErrorEntries.length - 1 && ", "}
+              </span>
+            ))}
+          </>
         ) : (
           <S.Checkmark />
         )}
