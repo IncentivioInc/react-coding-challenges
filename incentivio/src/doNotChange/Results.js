@@ -2,19 +2,33 @@ import React from "react";
 import { useSelector } from "react-redux";
 import * as S from "./Results.styles";
 
+const letters = ["i", "n", "c", "e", "t", "v", "o"];
 export default function Results() {
+  const anyLoaded = useSelector((state) =>
+    letters.some((letter) => state[letter].loading !== null)
+  );
   const loadingError = useSelector((state) => state.results.loadingError);
   const matchErrorEntries = useSelector((state) =>
     Object.entries(state.results.matchError)
   );
 
-  return (
+  return anyLoaded ? (
     <S.Container>
+      <h1>Results</h1>
       <div>
-        Loading: {loadingError ? "X You should only display " : <S.Checkmark />}
+        Preload all of the data:{" "}
+        {loadingError ? (
+          <>
+            <S.X />
+            "You should only render the letters from the api one all of them
+            have been loaded"
+          </>
+        ) : (
+          <S.Checkmark />
+        )}
       </div>
       <div>
-        Match:{" "}
+        Match: <S.X />
         {matchErrorEntries.length ? (
           matchErrorEntries.map(([expected, actual], i) => (
             <span key={expected}>
@@ -27,5 +41,5 @@ export default function Results() {
         )}
       </div>
     </S.Container>
-  );
+  ) : null;
 }
