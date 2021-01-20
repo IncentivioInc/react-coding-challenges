@@ -17,4 +17,4 @@ This apps only purpose is to test your ability to prevent unnecessary rerenders 
 - Rerenders should stay at 0 when you move the mouse
 - Build off of Exercise One
 - This solution should combine your solution for One with an some additional changes
-- You have more freedom to change code here, but the [Rules for both exercises](rules-for-both-exercises) still apply.
+- You have more freedom to change code here, but the [Rules for both exercises](#rules-for-both-exercises) still apply.
