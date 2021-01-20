@@ -1,6 +1,10 @@
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoadingError, setMatchError } from "./results.slice";
+import {
+  setLoadingError,
+  setMatchError,
+  removeMatchError,
+} from "./results.slice";
 
 export const useRenderAndValidate = (char, stateChar) => {
   const renderCount = useRef(0);
@@ -18,6 +22,8 @@ export const useRenderAndValidate = (char, stateChar) => {
 
       if (char !== stateChar) {
         dispatch(setMatchError({ expected: char, actual: stateChar }));
+      } else {
+        dispatch(removeMatchError(char));
       }
     }
 
