@@ -16,6 +16,10 @@ const slice = createSlice({
     removeMatchError(state, action) {
       delete state.matchError[action.payload];
     },
+    clearErrors(state) {
+      state.loadingError = null;
+      state.matchError = {};
+    },
   },
 });
 
@@ -23,5 +27,6 @@ export const {
   setLoadingError,
   setMatchError,
   removeMatchError,
+  clearErrors,
 } = slice.actions;
 export default slice.reducer;

@@ -4,6 +4,7 @@ import {
   setLoadingError,
   setMatchError,
   removeMatchError,
+  clearErrors,
 } from "./results.slice";
 
 export const useRenderAndValidate = (char, stateChar) => {
@@ -25,6 +26,8 @@ export const useRenderAndValidate = (char, stateChar) => {
       } else {
         dispatch(removeMatchError(char));
       }
+    } else {
+      dispatch(clearErrors());
     }
 
     return stateChar;
