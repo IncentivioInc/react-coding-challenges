@@ -8,6 +8,10 @@ function App() {
 
   return (
     <S.AppContainer>
+      <p>
+        Uh oh...the letters are all jumbled up. Call the api to get the correct
+        data.
+      </p>
       {loading ? (
         "Loading..."
       ) : (
