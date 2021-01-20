@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoadingError, setMatchError } from "./results.slice";
 
 export const useRenderAndValidate = (char, stateChar) => {
+  const renderCount = useRef(0);
   const dispatch = useDispatch();
   const allCharactersLoaded = useSelector((state) => {
     const characters = ["i", "n", "c", "e", "t", "v", "o"];
@@ -9,12 +11,14 @@ export const useRenderAndValidate = (char, stateChar) => {
   });
 
   return function renderAndValidate() {
-    if (!allCharactersLoaded) {
-      dispatch(setLoadingError());
-    }
+    if (renderCount.current > 0) {
+      if (!allCharactersLoaded) {
+        dispatch(setLoadingError());
+      }
 
-    if (char !== stateChar) {
-      dispatch(setMatchError({ expected: char, actual: stateChar }));
+      if (char !== stateChar) {
+        dispatch(setMatchError({ expected: char, actual: stateChar }));
+      }
     }
 
     return stateChar;
