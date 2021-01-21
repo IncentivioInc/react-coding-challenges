@@ -15,7 +15,7 @@ const api = {
   getT: () => new Promise((resolve) => resolve(characterData("t"))),
   getV: () =>
     new Promise((resolve) => {
-      setTimeout(() => resolve(characterData("o")), 1000);
+      setTimeout(() => resolve(characterData("v")), 1000);
     }),
   getO: () =>
     new Promise((resolve) => {
