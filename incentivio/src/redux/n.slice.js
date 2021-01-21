@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { initialState } from "../doNotChange/utils";
-import fakeApi from "../doNotChange/fakeApi";
+import { initialState } from "../do-not-change/utils";
+import fakeApi from "../do-not-change/fakeApi";
 
 /**
  * Instead of vanilla redux, we are using redux-toolkit to create state 'slices'.

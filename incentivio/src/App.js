@@ -1,7 +1,7 @@
 import * as S from "./App.styles";
 import { useLoadButton, useResetButton } from "./App.hooks";
-import Incentivio from "./doNotChange/Incentivio";
-import Instructions from "./doNotChange/Instructions";
+import Incentivio from "./do-not-change/Incentivio";
+import Instructions from "./do-not-change/Instructions";
 
 function App() {
   const { buttonPushed, setButtonPushed, handleLoad } = useLoadButton();
