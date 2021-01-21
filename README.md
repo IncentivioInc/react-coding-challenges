@@ -15,10 +15,16 @@ A series of React coding challenges for benchmarking new recruits
 
 ### [Rocket Ship](https://github.com/IncentivioInc/react-coding-challenges/tree/main/rocket-ship)
 
-*Unecessary re-renders, fine grained control*
+_Unecessary re-renders, fine grained control_
 
 ### [Rerenders](https://github.com/IncentivioInc/react-coding-challenges/tree/main/rerenders)
 
-*Unnecessary re-renders*
+_Unnecessary re-renders_
 
 If you're familiar with the react concepts in play here, this may only take you 5 minutes. If not, you will probably be hitting the react docs + google.
+
+### [Incentivio](https://github.com/IncentivioInc/react-coding-challenges/tree/main/incentivio)
+
+_Redux, Hooks_
+
+Fix the spelling of "incentivio".

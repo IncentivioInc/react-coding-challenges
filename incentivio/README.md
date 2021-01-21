@@ -25,3 +25,4 @@ As you familiarize yourself with the code, you may think "this is stupid" and "w
 - <Incentivio /> uses redux state to construct the string "incentivio". Initially the redux state is incorrect
 - The fakeApi has the correct state
 - Optimizing renders is _not_ a requirement
+- If you did some of the other challenges, you may be thinking this one is also about preventing unnecessary re-renders. That is not the case.

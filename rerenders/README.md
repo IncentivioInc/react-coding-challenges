@@ -7,6 +7,12 @@ This apps only purpose is to test your ability to prevent unnecessary rerenders 
 - Do not modify the return value of any component. So, you can't change what they render.
 - Don't change the useRef expression in either exercise (`const rerenders = useRef(0)`). Keep this as is.
 
+## Getting Started
+
+`npm install`
+
+`npm start`
+
 ## Exercise One
 
 - Rerenders should stay at 0 when you move the mouse
