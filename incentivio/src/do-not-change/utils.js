@@ -8,9 +8,6 @@ export const correctIndices = {
   o: [9],
 };
 
-export const checkIndices = (character, indices) =>
-  indices.every((index) => correctIndices[character].includes(index));
-
 /**
  * returns an object with shape
  * {
