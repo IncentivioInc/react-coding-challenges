@@ -7,11 +7,11 @@ import { reset as tReset } from "./t.slice";
 import { reset as vReset } from "./v.slice";
 
 export const resetState = () => (dispatch) => {
-  dispatch(cReset);
-  dispatch(eReset);
-  dispatch(iReset);
-  dispatch(nReset);
-  dispatch(oReset);
-  dispatch(tReset);
-  dispatch(vReset);
+  dispatch(cReset());
+  dispatch(eReset());
+  dispatch(iReset());
+  dispatch(nReset());
+  dispatch(oReset());
+  dispatch(tReset());
+  dispatch(vReset());
 };

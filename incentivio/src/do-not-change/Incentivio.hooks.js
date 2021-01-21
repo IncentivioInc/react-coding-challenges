@@ -40,6 +40,7 @@ export const useIncentivio = (buttonPushed) => {
   const makeSuccessSelector = useCallback(
     () => (state) =>
       buttonPushed &&
+      !error &&
       incentivioString === "incentivio" &&
       state.i.loading === false &&
       state.n.loading === false &&
@@ -48,7 +49,7 @@ export const useIncentivio = (buttonPushed) => {
       state.t.loading === false &&
       state.v.loading === false &&
       state.o.loading === false,
-    [buttonPushed, incentivioString]
+    [buttonPushed, incentivioString, error]
   );
 
   const success = useSelector(makeSuccessSelector());
