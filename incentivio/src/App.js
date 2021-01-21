@@ -1,29 +1,15 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
 import * as S from "./App.styles";
+import { useLoadButton, useResetButton } from "./App.hooks";
 import Incentivio from "./doNotChange/Incentivio";
-import { resetState } from "./redux/common.actions";
+import Instructions from "./doNotChange/Instructions";
 
 function App() {
-  const dispatch = useDispatch();
-  const [buttonPushed, setButtonPushed] = useState(false);
-
-  const handleLoad = () => {
-    setButtonPushed(true);
-  };
-
-  const handleReset = () => {
-    dispatch(resetState());
-    setButtonPushed(false);
-  };
+  const { buttonPushed, setButtonPushed, handleLoad } = useLoadButton();
+  const { handleReset } = useResetButton(setButtonPushed);
 
   return (
     <S.AppContainer>
-      <p>
-        Uh oh...the letters are all jumbled up. Press the Load button to call
-        the api for get the correct data. The string below should spell
-        "incentivio" afterwards.
-      </p>
+      <Instructions />
       <div>
         <button onClick={handleLoad}>Load</button>{" "}
         <button onClick={handleReset}>Reset</button>
