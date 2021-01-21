@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { vInitialState } from "../doNotChange/initialState";
+import { initialState } from "../doNotChange/utils";
 import fakeApi from "../doNotChange/fakeApi";
 
 /**
@@ -22,7 +22,10 @@ export const fetchCharacter = createAsyncThunk(
 
 const slice = createSlice({
   name: sliceName,
-  initialState: vInitialState,
+  initialState: initialState.v,
+  reducers: {
+    reset: () => initialState.v,
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchCharacter.pending, (state, action) => {
       // handle pending action
@@ -36,4 +39,5 @@ const slice = createSlice({
   },
 });
 
+export const { reset } = slice.actions;
 export default slice.reducer;

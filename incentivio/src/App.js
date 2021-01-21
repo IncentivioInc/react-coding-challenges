@@ -1,36 +1,34 @@
-import { useCharacters } from "./App.hooks";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import * as S from "./App.styles";
-import Character from "./doNotChange/Character";
-import Results from "./doNotChange/Results";
+import Incentivio from "./doNotChange/Incentivio";
+import { resetState } from "./redux/common.actions";
 
 function App() {
-  const { loading } = useCharacters();
+  const dispatch = useDispatch();
+  const [buttonPushed, setButtonPushed] = useState(false);
+
+  const handleLoad = () => {
+    setButtonPushed(true);
+  };
+
+  const handleReset = () => {
+    dispatch(resetState());
+    setButtonPushed(false);
+  };
 
   return (
     <S.AppContainer>
       <p>
-        Uh oh...the letters are all jumbled up. Call the api to get the correct
-        data.
+        Uh oh...the letters are all jumbled up. Press the Load button to call
+        the api for get the correct data. The string below should spell
+        "incentivio" afterwards.
       </p>
-      {loading ? (
-        "Loading..."
-      ) : (
-        <>
-          <S.CharacterContainer>
-            <Character char="i" />
-            <Character char="n" />
-            <Character char="c" />
-            <Character char="e" />
-            <Character char="n" />
-            <Character char="t" />
-            <Character char="i" />
-            <Character char="v" />
-            <Character char="i" />
-            <Character char="o" />
-          </S.CharacterContainer>
-          <Results />
-        </>
-      )}
+      <div>
+        <button onClick={handleLoad}>Load</button>{" "}
+        <button onClick={handleReset}>Reset</button>
+      </div>
+      <Incentivio buttonPushed={buttonPushed} />
     </S.AppContainer>
   );
 }

@@ -8,10 +8,3 @@ export const AppContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-export const CharacterContainer = styled.div`
-  display: flex;
-  width: 50%;
-  flex-direction: row;
-  justify-content: space-between;
-`;
