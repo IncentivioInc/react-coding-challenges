@@ -15,5 +15,6 @@
 ## Think about
 
 - How can we prevent components from re-rendering
+- There are many solutions to this challenge, but only one __optimal__ solution
 
 ![screenshot](https://puu.sh/Fq16F/1ad6edff1b.png)
